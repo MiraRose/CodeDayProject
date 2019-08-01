@@ -10,9 +10,9 @@
     <input type="submit">
 </form>
 
-    <%= for item <- getAPI() do %>
-    <%= item %> <BR>
-    <% end %>
 
+    <%= for thing <- @content do %>
+    <%= thing %> <BR>
+    <% end %>
   </article>
 </section>
