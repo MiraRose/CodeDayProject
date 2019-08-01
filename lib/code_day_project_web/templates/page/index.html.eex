@@ -2,7 +2,7 @@
 
 <section class="row">
   <article class="column">
-    <%# <%= inspect getAPI() %>
+    
     
     <form action="/findOrg" method="post">
     <input type="hidden" value="<%= Phoenix.Controller.get_csrf_token() %>" name="_csrf_token"/>
@@ -10,9 +10,10 @@
     <input type="submit">
 </form>
 
-
-    <%= for thing <- @content do %>
-    <%= thing %> <BR>
+  <ul>
+    <%= for item <- @content do %>
+    <li><%= item %></li>
     <% end %>
+    </ul>
   </article>
 </section>
