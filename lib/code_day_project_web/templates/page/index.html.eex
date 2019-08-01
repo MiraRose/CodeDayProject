@@ -6,5 +6,10 @@
 <section class="row">
   <article class="column">
     <%= inspect getAPI() %>
+    
+    <%= for item <- getAPI() do %>
+    <%= item %> <BR>
+    <% end %>
+
   </article>
 </section>
