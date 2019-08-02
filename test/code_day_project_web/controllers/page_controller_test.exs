@@ -24,7 +24,7 @@ defmodule CodeDayProjectWeb.PageControllerTest do
     assert html_response(conn, 200) =~ "pong"
   end
 
-  test "POST /findOrg returns error when nothing found", %{conn: conn} do
+  test "POST /findOrg returns nothing found when nothing found", %{conn: conn} do
 
     bypass = Bypass.open()
 
@@ -37,6 +37,21 @@ defmodule CodeDayProjectWeb.PageControllerTest do
     |> post("/findOrg", "{\"organization\": \"notAOrg\"}")
     
     assert html_response(conn, 200) =~ "Nothing was found"
+  end
+
+  test "POST /findOrg returns something went wrong for server problem", %{conn: conn} do
+
+    bypass = Bypass.open()
+
+    Bypass.expect(bypass, fn conn ->
+      Plug.Conn.resp(conn, 500, "Something went wrong with the server")
+    end)
+
+    Application.put_env(:code_day_project, :github_api, "localhost:#{bypass.port}") |> IO.inspect
+    conn = Plug.Conn.put_req_header(conn, "content-type", "application/json")
+    |> post("/findOrg", "{\"organization\": \"notAOrg\"}")
+    
+    assert html_response(conn, 200) =~ "Something went wrong"
   end
 
 end
