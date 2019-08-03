@@ -2,7 +2,7 @@ defmodule CodeDayProjectWeb.PageController do
   use CodeDayProjectWeb, :controller
 
   def index(conn, _params) do
-    render(conn, "index.html", content: [], message: "Enter a orgnization name!", name: "")
+    render(conn, "index.html", content: [], message: "Enter a organization name! (ex: github)", name: "")
   end
 
   def show(conn, _params) do

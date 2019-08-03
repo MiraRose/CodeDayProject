@@ -1,10 +1,12 @@
 # CodeDayProject
 
-This page takes an organization name and returns a list of public repositories using Github's API.
+What It Does: This page takes an organization name and returns a list of public repositories using Github's API and a count of how many respositories displayed. Clicking a respository opens a new tab with that repository on GitHub.
 
-Note: It is rate-limited to 60 calls an hour.
+Important Note: It is rate-limited to 60 calls an hour.
 
-To start your Phoenix server:
+About the Code: Tests are included.
+
+To start the Phoenix server after cloning:
 
   * Install dependencies with `mix deps.get`
   * Create and migrate your database with `mix ecto.setup`
