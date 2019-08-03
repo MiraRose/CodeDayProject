@@ -18,7 +18,6 @@ defmodule CodeDayProjectWeb.Router do
 
     get "/", PageController, :index
     post "/findOrg", PageController, :show
-    get "/error404", PageController, :error404
   end
 
   # Other scopes may use custom stacks.

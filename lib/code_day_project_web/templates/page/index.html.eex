@@ -1,24 +1,26 @@
 
 
-<section class="row">
-  <article class="column">
-    
-    
-    <form action="/findOrg" method="post">
-    <input type="hidden" value="<%= Phoenix.Controller.get_csrf_token() %>" name="_csrf_token"/>
-    <input type="text" name="organization">
-    <input type="submit">
-</form>
+<div>
+  <div class="form">
+      <form action="/findOrg" method="post">
+        <input type="hidden" value="<%= Phoenix.Controller.get_csrf_token() %>" name="_csrf_token"/>
+        <input type="text" name="organization">
+        <input type="submit">
+      </form>
+  </div>
 
 <%= if @message == "" do %>
-<p>Repositories found: <%= length(@content) %></p>
+  <p>Repositories found: <%= length(@content) %></p>
 <% end %>
 
 <p> <%= @message %> </p>
+
+<div class="repos">
   <ul>
     <%= for item <- @content do %>
-    <li><%= item %></li>
+    <li><a href ="<%= elem(item, 1) %>" target = _blank><%= elem(item, 0) %></a></li>
     <% end %>
     </ul>
-  </article>
-</section>
+</div>
+</div>
+  
