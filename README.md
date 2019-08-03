@@ -1,5 +1,9 @@
 # CodeDayProject
 
+This page takes an organization name and returns a list of public repositories using Github's API.
+
+Note: It is rate-limited to 60 calls an hour.
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
@@ -9,12 +13,6 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+To run tests:
 
-## Learn more
-
-  * Official website: http://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+  * Run `mix test` in folder

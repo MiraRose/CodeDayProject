@@ -1,30 +1,37 @@
+<div class="form">
+  <form action="/findOrg" method="post">
+    <input
+      type="hidden"
+      value="<%= Phoenix.Controller.get_csrf_token() %>"
+      name="_csrf_token"
+    />
+    <input
+      type="text"
+      name="organization"
+      placeholder="Enter an organization"
+    />
+    <input type="submit" value="Get Repos" />
+  </form>
+</div>
 
-
-
-  <div class="form">
-      <form action="/findOrg" method="post">
-        <input type="hidden" value="<%= Phoenix.Controller.get_csrf_token() %>" name="_csrf_token"/>
-        <input type="text" name="organization" placeholder="Enter an organization">
-        <input type="submit" value="Get Repos">
-      </form>
-  </div>
-
-<div class="message">
 <%= if @message == "" do %>
-  <h3>Repositories found: <%= length(@content) %></h3>
-<% end %>
+<div class="message">
+  <h3><%= @name %></h3>
+  <h4>Repositories found: <%= length(@content) %></h4>
 </div>
 
+<% else %>
 <div class="message">
-<h3> <%= @message %> </h3>
+  <h3><%= @message %></h3>
 </div>
+<% end %>
 
 <div class="repos">
   <ul>
     <%= for item <- @content do %>
-    <li><a href ="<%= elem(item, 1) %>" target = _blank><%= elem(item, 0) %></a></li>
+    <li>
+      <a href="<%= elem(item, 1) %>" target="_blank"><%= elem(item, 0) %></a>
+    </li>
     <% end %>
-    </ul>
+  </ul>
 </div>
-
-  

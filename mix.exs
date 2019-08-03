@@ -45,7 +45,8 @@ defmodule CodeDayProject.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:httpoison, "~> 1.4"},
       {:poison, "~> 4.0"},
-      {:bypass, "~> 1.0"}
+      {:bypass, "~> 1.0"},
+      {:credo, "~> 1.1"}
     ]
   end
 
