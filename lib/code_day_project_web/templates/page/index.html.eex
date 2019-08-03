@@ -10,8 +10,11 @@
     <input type="submit">
 </form>
 
+<%= if @message == "" do %>
 <p>Repositories found: <%= length(@content) %></p>
+<% end %>
 
+<p> <%= @message %> </p>
   <ul>
     <%= for item <- @content do %>
     <li><%= item %></li>

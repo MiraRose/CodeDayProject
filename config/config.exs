@@ -17,7 +17,6 @@ config :code_day_project, CodeDayProjectWeb.Endpoint,
   secret_key_base: "laEx0inZRm8FBamnp50UZZzd8LUlmwmfNXX9a4tD4790GC2t9X5siWMboAFRtaFj",
   render_errors: [view: CodeDayProjectWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: CodeDayProject.PubSub, adapter: Phoenix.PubSub.PG2]
-  
 
 # Configures Elixir's Logger
 config :logger, :console,
