@@ -29,7 +29,7 @@ defmodule CodeDayProjectWeb.PageController do
       {:ok, repo_list}
     else
       %HTTPoison.Response{status_code: 404} -> {:error, "Organization not found"}
-      %HTTPoison.Response{status_code: 403} -> {:error, "You've talked to GitHub too much. Please try again next hour."}
+      %HTTPoison.Response{status_code: 403} -> {:error, "You've talked to GitHub too much. Please try again in a bit."}
       _ -> {:error, "Something went wrong"}
     end
   end
