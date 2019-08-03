@@ -1,6 +1,6 @@
 # CodeDayProject
 
-What It Does: This page takes an organization name and returns a list of public repositories using Github's API and a count of how many respositories displayed. Clicking a respository opens a new tab with that repository on GitHub.
+What It Does: This page takes an organization name and returns a list of public repositories using Github's API and displays a count of how many respositories displayed. Clicking a respository opens a new tab with that repository on GitHub.
 
 Important Note: It is rate-limited to 60 calls an hour.
 

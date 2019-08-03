@@ -9,7 +9,7 @@ defmodule CodeDayProjectWeb.PageControllerTest do
   test "POST /findOrg returns name(s) of repos", %{conn: conn} do
     bypass = Bypass.open()
 
-    fake_map = [%{"name" => "pong"}]
+    fake_map = [%{"name" => "pong", "html_url" => "http://github.com/github/pong"}]
     json_fake_map = Poison.encode!(fake_map)
 
     Bypass.expect(bypass, fn conn ->
@@ -28,7 +28,7 @@ defmodule CodeDayProjectWeb.PageControllerTest do
   test "POST /findOrg displays name of org searched for", %{conn: conn} do
     bypass = Bypass.open()
 
-    fake_map = [%{"name" => "pong"}]
+    fake_map = [%{"name" => "pong", "html_url" => "http://github.com/github/pong"}]
     json_fake_map = Poison.encode!(fake_map)
 
     Bypass.expect(bypass, fn conn ->
@@ -47,7 +47,7 @@ defmodule CodeDayProjectWeb.PageControllerTest do
   test "POST /findOrg returns name(s) of repos if organization not in lowercase", %{conn: conn} do
     bypass = Bypass.open()
 
-    fake_map = [%{"name" => "pong"}]
+    fake_map = [%{"name" => "pong", "html_url" => "http://github.com/github/pong"}]
     json_fake_map = Poison.encode!(fake_map)
 
     Bypass.expect(bypass, fn conn ->
@@ -85,7 +85,7 @@ defmodule CodeDayProjectWeb.PageControllerTest do
   test "POST /findOrg returns correct number of names in list", %{conn: conn} do
     bypass = Bypass.open()
 
-    fake_map = [%{"name" => "pong"}]
+    fake_map = [%{"name" => "pong", "html_url" => "http://github.com/github/pong"}]
     json_fake_map = Poison.encode!(fake_map)
 
     Bypass.expect(bypass, fn conn ->
@@ -104,7 +104,7 @@ defmodule CodeDayProjectWeb.PageControllerTest do
   test "POST /findOrg doesn't return number in list when there's an error", %{conn: conn} do
     bypass = Bypass.open()
 
-    fake_map = [%{"name" => "pong"}]
+    fake_map = [%{"name" => "pong", "html_url" => "http://github.com/github/pong"}]
     json_fake_map = Poison.encode!(fake_map)
 
     Bypass.expect(bypass, fn conn ->
